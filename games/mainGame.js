@@ -798,8 +798,8 @@ var goto = ( menu , destination ) => {
       menu.action = location.action;
     }
   });
-  menu.player.time.minute += destination.time;
-  menu.player = validateTime(menu.player);
+  menu.buttonShow.player.time.minute += destination.time;
+  menu.buttonShow.player = validateTime(menu.buttonShow.player);
   return menu;
 }
 
