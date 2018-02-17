@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'react-emotion';
 import { connect } from 'react-redux';
-import Progress from 'react-progressbar';
 
 import Page from '../components/Page';
 
