@@ -2,47 +2,14 @@ var allMenu = [
   {
     name :"House",
     lv : 1,
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 85 });
-            return menu;
-         }
-      },
-      {
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 35 });
-            return menu;
-         }
-      },
-      {
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 25 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 65 });
-            return menu;
-         }
-      },{
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 75 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 50 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 85 },
+      "School": { time : 35 },
+      "Convinient Store": { time : 25 },
+      "Police Station": { time : 65 },
+      "Office": { time : 75 },
+      "University": { time : 50 },
+    },
     action: [
       {
         name: "Work as Taxi",
@@ -102,47 +69,14 @@ var allMenu = [
   },
   {
     name :"Hospital",
-    go: [
-      {
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 50 });
-            return menu;
-         }
-      },
-      {
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 110 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 85 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 80 });
-            return menu;
-         }
-      },{
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 20 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 35 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "School": { time : 50 },
+      "Convinient Store": { time : 110 },
+      "Police Station": { time : 80 },
+      "Office": { time : 20 },
+      "University": { time : 35 },
+      "House": { time : 85 }
+    },
     action: [
       {
         name: "Work as Doctor",
@@ -220,47 +154,14 @@ var allMenu = [
   },
   {
     name :"School",
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 50 });
-            return menu;
-         }
-      },
-      {
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 60 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 35 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 30 });
-            return menu;
-         }
-      },{
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 40 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 15 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 50 },
+      "Convinient Store": { time : 60 },
+      "Police Station": { time : 30 },
+      "Office": { time : 40 },
+      "University": { time : 15 },
+      "House": { time : 35 }
+    },
     action: [
       {
         name: "Work as Teacher",
@@ -283,47 +184,14 @@ var allMenu = [
   },
   {
     name :"Police Station",
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 80 });
-            return menu;
-         }
-      },
-      {
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 40 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 65 });
-            return menu;
-         }
-      },{
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 30 });
-            return menu;
-         }
-      },{
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 70 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 45 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 80 },
+      "School": { time : 30 },
+      "Convinient Store": { time : 40 },
+      "Office": { time : 70 },
+      "University": { time : 45 },
+      "House": { time : 65 }
+    },
     action: [
       {
         name: "Work as Police",
@@ -361,47 +229,14 @@ var allMenu = [
   },
   {
     name :"Office",
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 20 });
-            return menu;
-         }
-      },
-      {
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 105 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 75 });
-            return menu;
-         }
-      },{
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 40 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 70 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 55 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 20 },
+      "School": { time : 40 },
+      "Convinient Store": { time : 105 },
+      "Police Station": { time : 70 },
+      "University": { time : 55 },
+      "House": { time : 75 }
+    },
     action: [
       {
         name: "Work as Accountant",
@@ -439,47 +274,14 @@ var allMenu = [
   },
   {
     name :"Convinient Store",
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 110 });
-            return menu;
-         }
-      },
-      {
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 105 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 25 });
-            return menu;
-         }
-      },{
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 65 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 40 });
-            return menu;
-         }
-      },{
-        name: "University",
-        destination: (menu) => {
-            menu = goto(menu, { name: "University" , time : 75 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 110 },
+      "School": { time : 65 },
+      "Police Station": { time : 40 },
+      "Office": { time : 105 },
+      "University": { time : 75 },
+      "House": { time : 25 }
+    },
     action: [
       {
         name: "Work as Cashier",
@@ -517,47 +319,14 @@ var allMenu = [
   },
   {
     name :"University",
-    go: [
-      {
-        name: "Hospital",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Hospital" , time : 35 });
-            return menu;
-         }
-      },
-      {
-        name: "Office",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Office" , time : 55 });
-            return menu;
-         }
-      },
-      {
-        name: "House",
-        destination: (menu) => {
-            menu = goto(menu, { name: "House" , time : 50 });
-            return menu;
-         }
-      },{
-        name: "School",
-        destination: (menu) => {
-            menu = goto(menu, { name: "School" , time : 15 });
-            return menu;
-         }
-      },{
-        name: "Police Station",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Police Station" , time : 45 });
-            return menu;
-         }
-      },{
-        name: "Convinient Store",
-        destination: (menu) => {
-            menu = goto(menu, { name: "Convinient Store" , time : 75 });
-            return menu;
-         }
-      }
-    ],
+    go: {
+      "Hospital": { time : 35 },
+      "School": { time : 15 },
+      "Convinient Store": { time : 75 },
+      "Police Station": { time : 45 },
+      "Office": { time : 55 },
+      "House": { time : 50 }
+    },
     action: [
       {
         name: "Study to be Accountant",
@@ -798,8 +567,8 @@ var goto = ( menu , destination ) => {
       menu.action = location.action;
     }
   });
-  menu.buttonShow.player.time.minute += destination.time;
-  menu.buttonShow.player = validateTime(menu.buttonShow.player);
+  menu.player.time.minute += destination.time;
+  menu.player = validateTime(menu.player);
   return menu;
 }
 
