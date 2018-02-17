@@ -42,7 +42,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Taxi",
@@ -142,7 +142,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Doctor",
@@ -260,7 +260,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Teacher",
@@ -323,7 +323,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Police",
@@ -401,7 +401,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Accountant",
@@ -479,7 +479,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Work as Cashier",
@@ -557,7 +557,7 @@ var allMenu = [
             return menu;
          }
       }
-    }],
+    ],
     action: [
       {
         name: "Study to be Accountant",
