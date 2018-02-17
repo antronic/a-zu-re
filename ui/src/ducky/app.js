@@ -14,19 +14,18 @@ import {
 
 const APP = createAction('APP');
 
-export const SET_CONTEXT = APP('SET_CONTEXT');
+export const SET_PLAYER = APP('SET_PLAYER');
 
-export const setContext = Creator(SET_CONTEXT);
+export const setPlayer = Creator(SET_PLAYER);
 
 
 const initial = {
-  money: 10000,
-  age: 20,
+  player: {},
 }
 
 export default createReducer(initial, state => ({
-  [SET_CONTEXT]: context => ({
+  [SET_PLAYER]: player => ({
     ...state,
-    context,
+    player,
   }),
 }))

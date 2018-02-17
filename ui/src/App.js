@@ -2,8 +2,14 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, withRouter } from "react-router-dom";
 import {hydrate, injectGlobal} from 'emotion';
 import styled from 'react-emotion';
+import { connect } from 'react-redux';
+
+import { player } from './games/start';
+import games from './games/mainGame';
 
 import Main from './pages/Main';
+
+import { setPlayer } from './ducky/app'
 
 const Background = styled.div`
   background-color: #f00;
@@ -40,7 +46,7 @@ const StatusBar = styled.div`
   justify-content: space-between;
 `;
 
-const Phone = ({ children }) => (
+const Phone = ({ children, setPlayer }) => (
   <Frame>
     <Display>
       <StatusBar>
@@ -77,6 +83,7 @@ class App extends Component {
         box-sizing: border-box;
       }
     `
+    this.props.setPlayer(player)
   }
 
   render() {
@@ -98,4 +105,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default connect(null, { setPlayer })(App);
