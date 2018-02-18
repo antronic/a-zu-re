@@ -184,8 +184,8 @@ var allMenu = [
         name: "Go to see doctor",
         showed: (player) => {return true},
         action: (menu) => {
-          player = heal( player, allJob["Nurse"] )
-          return player;
+          menu.buttonShow.player = heal( menu.buttonShow.player, allJob["Nurse"] )
+          return menu;
         }
       },
       {
