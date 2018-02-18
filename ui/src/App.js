@@ -11,6 +11,8 @@ import Main from './pages/Main';
 
 import { setPlayer, setMenu } from './ducky/app'
 
+document.title = 'A-ZU-RE';
+
 const Background = styled.div`
   background-color: #f00;
 `;
@@ -141,7 +143,8 @@ class App extends Component {
             }}>ตายจ้า!</h1>
           </div>
           <Phone>
-            <Route exact path="/" component={Main}/>
+            <Main/>
+            {/* <Route exact path="/" component={Main}/> */}
           </Phone>
         </div>
       </Router>

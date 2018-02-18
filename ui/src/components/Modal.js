@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'react-emotion';
+import { connect } from 'react-redux';
 
 let Background = styled('div')`
   z-index: 1000;
@@ -27,15 +28,19 @@ const Button = styled('button')`
   margin-top: 10px;
 `
 
-function listButtons(buttons) {
-  return buttons.map((button, index) => (
-    <Button key={index} onClick={ button.action }>
-      <span>{ button.title }</span>
-    </Button>
-  ))
+function listButtons(buttons, player) {
+  return buttons.map((button, index) => {
+    if (button.show(player)) {
+      return (
+        <Button key={index} onClick={ button.action }>
+          <span>{ button.title }</span>
+        </Button>
+      )
+    }
+  })
 }
 
-const Modal = ({ active, buttons, onDismiss, title }) => {
+const Modal = ({ active, buttons, menu, onDismiss, title }) => {
   return (active) ? (
     <Background onClick={onDismiss}>
       <div style={{
@@ -52,7 +57,7 @@ const Modal = ({ active, buttons, onDismiss, title }) => {
           height: '80%',
           overflow: 'scroll',
         }}>
-          { listButtons(buttons) }
+          { listButtons(buttons, menu.buttonShow.player) }
         </div>
       </div>
     </Background>
@@ -74,4 +79,8 @@ Modal.defaultProps = {
   ],
 }
 
-export default Modal;
+const mapStateToProps = state => ({
+  menu: state.app.menu,
+})
+
+export default connect(mapStateToProps)(Modal);
