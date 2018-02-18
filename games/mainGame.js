@@ -813,7 +813,7 @@ var validateTime = ( getPlayer ) => {
 var goto = ( menu , destination ) => {
   allMenu.forEach((location)=>{
     if(location.name == destination.name){
-      menu.currentMenu = destination;
+      menu.currentMenu = location;
     }
   });
   menu.buttonShow.player.time.minute += destination.time;
