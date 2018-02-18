@@ -819,27 +819,34 @@ var goto = ( menu , destination ) => {
   return menu;
 }
 
-var workAs = ( player, job ) => {
-  player.jobs.foreach((j) => {
+var workAs = ( menu, job ) => {
+  menu.buttonShow.player.jobs.foreach((j) => {
     if( j.name == job.name )
     j.lv += 0.15;   // work as
-    return job.income * parseInt(j.lv);
+    menu.buttonShow.player.money += job.income * parseInt(j.lv);
   });
-  player.time.hour += job.base;
+  menu.buttonShow.player.time.hour += job.base;
 
-  player = setEnergy(player, -job.energy);  // - is negative
+  menu = setEnergy(menu, -job.energy);  // - is negative
 
-  player = validateTime( player );
-  return player;
+  menu.buttonShow.player = validateTime( menu.buttonShow.player );
+  return menu;
 }
 
-var setEnergy = (player, en) => {
-  if( player.energy + en < 35 && en < 0){
-    player.health -= parseInt(-en);
+var setEnergy = (menu, en) => {
+  if( menu.buttonShow.player.energy + en < 35 && en < 0){
+    menu.buttonShow.player.health -= parseInt(-en);
   }
-  player.energy += en;
-  if( player.energy > 100 ) player.energy = 100;
-  return player;
+  menu.buttonShow.player.energy += en;
+  if( menu.buttonShow.player.energy > 100 ) menu.buttonShow.player.energy = 100;
+  if( menu.buttonShow.player.energy <= 0 ) {
+    allMenu.foreach((m) => {
+      if( menu.name == m.currentMenu.name ){
+        menu = m.go( menu );
+      }
+    });
+  }
+  return menu;
 }
 
 var sleep = ( player ) => {
