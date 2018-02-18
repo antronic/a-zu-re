@@ -795,18 +795,18 @@ var validateTime = ( getPlayer ) => {
   let day = 0;
   let month = 0;
   minute = getPlayer.time.minute%60;
-  if(getPlayer.time.minute%60 == 0) getPlayer.time.hour += 1;
+  if(getPlayer.time.minute > 60 ) getPlayer.time.hour += 1;
 
   hour = getPlayer.time.hour%24;
-  if(getPlayer.time.hour%24 == 0){
+  if(getPlayer.time.hour > 24){
     getPlayer.time.day += 1;
   }
 
   day = getPlayer.time.day%4;
-  if(getPlayer.time.day%4 == 0) getPlayer.time.month += 1;
+  if(getPlayer.time.day > 4 ) getPlayer.time.month += 1;
 
   month = getPlayer.time.month%4;
-  if(getPlayer.time.month%4 == 0) getPlayer.age += 1;
+  if(getPlayer.time.month > 4 ) getPlayer.age += 1;
 
   getPlayer.time.minute = minute;
   getPlayer.time.hour = hour;
@@ -833,7 +833,6 @@ var workAs = ( menu, job ) => {
     menu.buttonShow.player.money += job.income * parseInt(j.lv);
   });
   menu.buttonShow.player.time.hour += job.base;
-
   menu = setEnergy(menu, -job.energy);  // - is negative
 
   menu.buttonShow.player = validateTime( menu.buttonShow.player );
