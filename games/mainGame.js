@@ -775,10 +775,15 @@ var study = ( player , job ) => {
   };
   player.jobs.push( temp );
   player.time.minute += job.study.time.minute;
+  player = validateTime(player);
   player.time.hour   += job.study.time.hour;
+  player = validateTime(player);
   player.time.day    += job.study.day;
+  player = validateTime(player);
   player.time.month  += job.study.month;
+  player = validateTime(player);
   player.time.year   += job.study.year;
+  player = validateTime(player);
   player.money -= job.study.cost;
   player = validateTime(player);
   return player;
