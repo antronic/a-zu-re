@@ -83,19 +83,29 @@ class App extends Component {
         box-sizing: border-box;
       }
     `
-    if (!localStorage.getItem('a-zu-re-save') === false) {
-      const save = localStorage.getItem('a-zu-re-save');
-      const data = JSON.stringify(this.props.menu);
+    // if (!localStorage.getItem('a-zu-re-save') === false) {
+    //   const save = localStorage.getItem('a-zu-re-save');
+    //   const data = JSON.parse(save);
+    //   data.currentMenu = allMenu[0];
+    //
+    //   this.props.setMenu(Object.assign({}, data));
+    // } else {
+    //   const newMenu = menu;
+    //   newMenu.currentMenu = allMenu[0];
+    //
+    //   Object.assign(newMenu.buttonShow.player, {}, player)
+    //
+    //   this.props.setMenu(Object.assign({}, newMenu));
+    //
+    //   const data = JSON.stringify(newMenu);
+    //   localStorage.setItem('a-zu-re-save', data);
+    // }
+    const newMenu = menu;
+    newMenu.currentMenu = allMenu[0];
 
-      localStorage.setItem('a-zu-re-save', data);
-    } else {
-      const newMenu = menu;
-      newMenu.currentMenu = allMenu[0];
+    Object.assign(newMenu.buttonShow.player, {}, player)
 
-      Object.assign(newMenu.buttonShow.player, {}, player)
-
-      this.props.setMenu(Object.assign({}, newMenu));
-    }
+    this.props.setMenu(Object.assign({}, newMenu));
   }
 
   render() {

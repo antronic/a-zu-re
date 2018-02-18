@@ -56,9 +56,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Taxi"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Taxi"] )
+          return menu;
         }
       },
       {
@@ -69,18 +69,18 @@ var allMenu = [
           }
           return false;
         },
-        action: (player) => {
-          player.assets[0].lv += 1;
-          player.money -= player.assets[0].lv * 2000;
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player.assets[0].lv += 1;
+          menu.buttonShow.player.money -= menu.buttonShow.player.assets[0].lv * 2000;
+          return menu;
         }
       },
       {
         name: "Sleep",
         showed: (player) => {return true},
-        action: (player) => {
-          player = sleep(player);
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = sleep(menu.buttonShow.player);
+          return menu;
         }
       },
       {
@@ -95,9 +95,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Taxi"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Taxi"])
+          return menu;
         }
       }
     ]
@@ -158,9 +158,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Doctor"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Doctor"] )
+          return menu;
         }
       },
       {
@@ -175,17 +175,17 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Nurse"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Nurse"] )
+          return menu;
         }
       },
       {
         name: "Go to see doctor",
         showed: (player) => {return true},
-        action: (player) => {
-          player = heal( player, allJob["Nurse"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = heal( menu.buttonShow.player, allJob["Nurse"] )
+          return menu;
         }
       },
       {
@@ -200,9 +200,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Doctor"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Doctor"])
+          return menu;
         }
       },
       {
@@ -217,9 +217,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Nurse"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Nurse"])
+          return menu;
         }
       }
     ]
@@ -280,9 +280,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Teacher"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Teacher"] )
+          return menu;
         }
       }
     ]
@@ -344,9 +344,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Police"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Police"] )
+          return menu;
         }
       },
       {
@@ -361,9 +361,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Police"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Police"])
+          return menu;
         }
       }
     ]
@@ -424,9 +424,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Accountant"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Accountant"] )
+          return menu;
         }
       },
       {
@@ -441,9 +441,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Programmer"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Programmer"] )
+          return menu;
         }
       }
     ]
@@ -504,9 +504,9 @@ var allMenu = [
           });
           return hasLicense;
         },
-        action: (player) => {
-          player = workAs( player, allJob["Cashier"] )
-          return player;
+        action: (menu) => {
+          menu.buttonShow.player = workAs( menu, allJob["Cashier"] )
+          return menu;
         }
       },
       {
@@ -521,9 +521,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Cashier"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Cashier"])
+          return menu;
         }
       }
     ]
@@ -584,9 +584,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Accountant"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Accountant"])
+          return menu;
         }
       },
       {
@@ -601,9 +601,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Programmer"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Programmer"])
+          return menu;
         }
       },
       {
@@ -618,9 +618,9 @@ var allMenu = [
           });
           return !hasLicense;
         },
-        action: ( player ) => {
-          player = study(player, allJob["Teacher"])
-          return player;
+        action: ( menu ) => {
+          menu.buttonShow.player = study(menu.buttonShow.player, allJob["Teacher"])
+          return menu;
         }
       }
     ]
@@ -843,8 +843,8 @@ var setEnergy = (menu, en) => {
   if( menu.buttonShow.player.energy > 100 ) menu.buttonShow.player.energy = 100;
   if( menu.buttonShow.player.energy <= 0 ) {
     allMenu.forEach((m) => {
-      if( menu.name == m.currentMenu.name ){
-        menu = m.go( menu );
+      if( menu.currentMenu.name == m.name ){
+        menu = m.go.destination( menu, { name:"Hospital", time: 0 } );
       }
     });
   }

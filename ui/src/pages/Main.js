@@ -47,6 +47,9 @@ const MainPage = class MainPage extends Component {
   getImage() {
     let name = '';
 
+    console.log('->')
+    console.log(this.props.menu.buttonShow.player)
+
     switch (`${this.props.menu.currentMenu.name}`.toLowerCase()) {
       case 'house':
         switch (this.props.menu.buttonShow.player.assets[0].lv) {
@@ -128,7 +131,12 @@ const MainPage = class MainPage extends Component {
                 break;
               }
               case 'action': {
-                newMenu.currentMenu.player = m.action(this.props.menu)
+                // console.log(m.action(this.props.menu))
+                const menu = m.action(this.props.menu);
+                console.log(menu)
+                console.log(newMenu)
+                Object.assign(newMenu.currentMenu, {}, menu.currentMenu);
+                Object.assign(newMenu.buttonShow, {}, menu.buttonShow);
                 break;
               }
             }
@@ -245,6 +253,7 @@ const MainPage = class MainPage extends Component {
           </MenuButton>
 
           <p style={{ alignSelf: 'flex-end', color: '#fff' }}>
+            {/* {console.log(player)} */}
             {this.normalizeTime(player.time.hour)}:{this.normalizeTime(player.time.minute)}
           </p>
         </div>
