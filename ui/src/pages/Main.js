@@ -123,25 +123,26 @@ const MainPage = class MainPage extends Component {
         <Modal onDismiss={() => { this.setState({modalActive: !this.state.modalActive}) }}
           active={this.state.modalActive}
           title={this.state.modalTitle}
-          buttons={this.props.menu.currentMenu[this.state.modalKey].map(m => ({ title: m.name, action: () => {
-            const newMenu = this.props.menu;
-            switch(this.state.modalKey) {
-              case 'go': {
-                Object.assign(newMenu.currentMenu, {}, m.destination(this.props.menu));
-                break;
+          buttons={this.props.menu.currentMenu[this.state.modalKey].map(m => ({
+            title: m.name,
+            show: (this.state.modalKey === 'action') ? m.showed : (() => true),
+            action: () => {
+              const newMenu = this.props.menu;
+              switch(this.state.modalKey) {
+                case 'go': {
+                  Object.assign(newMenu.currentMenu, {}, m.destination(this.props.menu));
+                  break;
+                }
+                case 'action': {
+                  const menu = m.action(this.props.menu);
+
+                  Object.assign(newMenu.currentMenu, {}, menu.currentMenu);
+                  Object.assign(newMenu.buttonShow, {}, menu.buttonShow);
+                  break;
+                }
               }
-              case 'action': {
-                // console.log(m.action(this.props.menu))
-                const menu = m.action(this.props.menu);
-                console.log(menu)
-                console.log(newMenu)
-                Object.assign(newMenu.currentMenu, {}, menu.currentMenu);
-                Object.assign(newMenu.buttonShow, {}, menu.buttonShow);
-                break;
-              }
-            }
-            this.props.setMenu(Object.assign({}, newMenu));
-          } }))}/>
+              this.props.setMenu(Object.assign({}, newMenu));
+            } }))}/>
         <div className="title">
           <div style={{
             height: '90px',
@@ -252,8 +253,7 @@ const MainPage = class MainPage extends Component {
             <span className="fa fa-bars"></span>
           </MenuButton>
 
-          <p style={{ alignSelf: 'flex-end', color: '#fff' }}>
-            {/* {console.log(player)} */}
+          <p style={{ alignSelf: 'flex-end', color: '#fff', marginRight: '15px' }}>
             {this.normalizeTime(player.time.hour)}:{this.normalizeTime(player.time.minute)}
           </p>
         </div>

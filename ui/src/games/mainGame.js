@@ -47,12 +47,12 @@ var allMenu = [
       {
         name: "Work as Taxi",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Taxi" ){
               hasLicense = true;
+              console.log("Already has license");
             }
-            hasLicense = false;
           });
           return hasLicense;
         },
@@ -86,12 +86,11 @@ var allMenu = [
       {
         name: "Buy Taxi License",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Taxi" ){
               hasLicense = true;
             }
-            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -149,12 +148,12 @@ var allMenu = [
       {
         name: "Work as Doctor",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Doctor" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -166,12 +165,12 @@ var allMenu = [
       {
         name: "Work as Nurse",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Nurse" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -191,12 +190,12 @@ var allMenu = [
       {
         name: "Study to be Doctor",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Doctor" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -208,12 +207,12 @@ var allMenu = [
       {
         name: "Study to be Nurse",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Nurse" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -271,12 +270,12 @@ var allMenu = [
       {
         name: "Work as Teacher",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Teacher" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -335,12 +334,12 @@ var allMenu = [
       {
         name: "Work as Police",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Police" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -352,12 +351,12 @@ var allMenu = [
       {
         name: "Study to be Police",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Police" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -415,12 +414,12 @@ var allMenu = [
       {
         name: "Work as Accountant",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Accountant" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -432,12 +431,12 @@ var allMenu = [
       {
         name: "Work as Programmer",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Programmer" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -495,12 +494,12 @@ var allMenu = [
       {
         name: "Work as Cashier",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Cashier" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return hasLicense;
         },
@@ -512,12 +511,12 @@ var allMenu = [
       {
         name: "Study to be Cashier",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Cashier" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -575,12 +574,12 @@ var allMenu = [
       {
         name: "Study to be Accountant",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Accountant" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -592,12 +591,12 @@ var allMenu = [
       {
         name: "Study to be Programmer",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Programmer" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -609,12 +608,12 @@ var allMenu = [
       {
         name: "Study to be Teacher",
         showed: (player) => {
-          let hasLicense;
+          let hasLicense = false;
           player.jobs.forEach( (job) => {
             if( job.name == "Teacher" ){
               hasLicense = true;
             }
-            hasLicense = false;
+
           });
           return !hasLicense;
         },
@@ -775,10 +774,15 @@ var study = ( player , job ) => {
   };
   player.jobs.push( temp );
   player.time.minute += job.study.time.minute;
+  player = validateTime(player);
   player.time.hour   += job.study.time.hour;
+  player = validateTime(player);
   player.time.day    += job.study.day;
+  player = validateTime(player);
   player.time.month  += job.study.month;
+  player = validateTime(player);
   player.time.year   += job.study.year;
+  player = validateTime(player);
   player.money -= job.study.cost;
   player = validateTime(player);
   return player;
@@ -790,18 +794,18 @@ var validateTime = ( getPlayer ) => {
   let day = 0;
   let month = 0;
   minute = getPlayer.time.minute%60;
-  if(getPlayer.time.minute%60 == 0) getPlayer.time.hour += 1;
+  if(getPlayer.time.minute > 60 ) getPlayer.time.hour += 1;
 
   hour = getPlayer.time.hour%24;
-  if(getPlayer.time.hour%24 == 0){
+  if(getPlayer.time.hour > 24){
     getPlayer.time.day += 1;
   }
 
   day = getPlayer.time.day%4;
-  if(getPlayer.time.day%4 == 0) getPlayer.time.month += 1;
+  if(getPlayer.time.day > 4 ) getPlayer.time.month += 1;
 
   month = getPlayer.time.month%4;
-  if(getPlayer.time.month%4 == 0) getPlayer.age += 1;
+  if(getPlayer.time.month > 4 ) getPlayer.age += 1;
 
   getPlayer.time.minute = minute;
   getPlayer.time.hour = hour;
@@ -828,7 +832,6 @@ var workAs = ( menu, job ) => {
     menu.buttonShow.player.money += job.income * parseInt(j.lv);
   });
   menu.buttonShow.player.time.hour += job.base;
-
   menu = setEnergy(menu, -job.energy);  // - is negative
 
   menu.buttonShow.player = validateTime( menu.buttonShow.player );
