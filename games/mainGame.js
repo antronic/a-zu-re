@@ -57,7 +57,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Taxi"] )
+          menu = workAs( menu, allJob["Taxi"] )
           return menu;
         }
       },
@@ -159,7 +159,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Doctor"] )
+          menu = workAs( menu, allJob["Doctor"] )
           return menu;
         }
       },
@@ -176,7 +176,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Nurse"] )
+          menu = workAs( menu, allJob["Nurse"] )
           return menu;
         }
       },
@@ -281,7 +281,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Teacher"] )
+          menu = workAs( menu, allJob["Teacher"] )
           return menu;
         }
       }
@@ -345,7 +345,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Police"] )
+          menu = workAs( menu, allJob["Police"] )
           return menu;
         }
       },
@@ -425,7 +425,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Accountant"] )
+          menu = workAs( menu, allJob["Accountant"] )
           return menu;
         }
       },
@@ -442,7 +442,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Programmer"] )
+          menu = workAs( menu, allJob["Programmer"] )
           return menu;
         }
       }
@@ -505,7 +505,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu, allJob["Cashier"] )
+          menu = workAs( menu, allJob["Cashier"] )
           return menu;
         }
       },
