@@ -803,15 +803,17 @@ var validateTime = ( getPlayer ) => {
   month = getPlayer.time.month%4;
   if(getPlayer.time.month%4 == 0) getPlayer.age += 1;
 
+  getPlayer.time.minute = minute;
+  getPlayer.time.hour = hour;
+  getPlayer.time.day = day;
+  getPlayer.time.month = month;
   return getPlayer;
 }
 
 var goto = ( menu , destination ) => {
-  menu.currentMenu = destination.name;
-  allMenu.filter((location)=>{
+  allMenu.foreach((location)=>{
     if(location.name == destination.name){
-      menu.go     = location.go;
-      menu.action = location.action;
+      menu.currentMenu = destination;
     }
   });
   menu.buttonShow.player.time.minute += destination.time;
