@@ -1,6 +1,7 @@
 var allMenu = [
   {
     name :"House",
+    lv : 1,
     go: [
       {
         name: "Hospital",
@@ -46,11 +47,12 @@ var allMenu = [
       {
         name: "Work as Taxi",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Taxi" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -62,13 +64,13 @@ var allMenu = [
       {
         name: "Upgrade House",
         showed: (player) => {
-          if( player.assets[0].lv < 5 && player.money >= player.assets[0].lv * 2000 ){
+          if( player.money >= player.assets[0].lv * 2000 ){
             return true;
           }
           return false;
         },
         action: (player) => {
-          if( player.assets[0].lv < 5 ) player.assets[0].lv += 1;
+          player.assets[0].lv += 1;
           player.money -= player.assets[0].lv * 2000;
           return player;
         }
@@ -84,11 +86,12 @@ var allMenu = [
       {
         name: "Buy Taxi License",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Taxi" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -146,11 +149,12 @@ var allMenu = [
       {
         name: "Work as Doctor",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Doctor" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -162,11 +166,12 @@ var allMenu = [
       {
         name: "Work as Nurse",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Nurse" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -186,11 +191,12 @@ var allMenu = [
       {
         name: "Study to be Doctor",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Doctor" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -202,11 +208,12 @@ var allMenu = [
       {
         name: "Study to be Nurse",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Nurse" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -264,11 +271,12 @@ var allMenu = [
       {
         name: "Work as Teacher",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Teacher" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -327,11 +335,12 @@ var allMenu = [
       {
         name: "Work as Police",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Police" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -343,11 +352,12 @@ var allMenu = [
       {
         name: "Study to be Police",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Police" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -405,11 +415,12 @@ var allMenu = [
       {
         name: "Work as Accountant",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Accountant" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -421,11 +432,12 @@ var allMenu = [
       {
         name: "Work as Programmer",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Programmer" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -483,11 +495,12 @@ var allMenu = [
       {
         name: "Work as Cashier",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Cashier" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return hasLicense;
         },
@@ -499,11 +512,12 @@ var allMenu = [
       {
         name: "Study to be Cashier",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Cashier" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -561,11 +575,12 @@ var allMenu = [
       {
         name: "Study to be Accountant",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Accountant" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -577,11 +592,12 @@ var allMenu = [
       {
         name: "Study to be Programmer",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Programmer" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -593,11 +609,12 @@ var allMenu = [
       {
         name: "Study to be Teacher",
         showed: (player) => {
-          let hasLicense = player.jobs.filer( (job) => {
+          let hasLicense;
+          player.jobs.forEach( (job) => {
             if( job.name == "Teacher" ){
-              return true;
+              hasLicense = true;
             }
-            return false;
+            hasLicense = false;
           });
           return !hasLicense;
         },
@@ -756,7 +773,7 @@ var study = ( player , job ) => {
     income: job.income,
     lv: job.level
   };
-  player.jobs.push();
+  player.jobs.push( temp );
   player.time.minute += job.study.time.minute;
   player.time.hour   += job.study.time.hour;
   player.time.day    += job.study.day;
@@ -773,29 +790,27 @@ var validateTime = ( getPlayer ) => {
   let day = 0;
   let month = 0;
   minute = getPlayer.time.minute%60;
-  if(getPlayer.time.minute > 60 ) getPlayer.time.hour += 1;
+  if(getPlayer.time.minute%60 == 0) getPlayer.time.hour += 1;
 
   hour = getPlayer.time.hour%24;
-  if(getPlayer.time.hour> 24){
+  if(getPlayer.time.hour%24 == 0){
     getPlayer.time.day += 1;
   }
 
   day = getPlayer.time.day%4;
-  if(getPlayer.time.day>4 ) getPlayer.time.month += 1;
+  if(getPlayer.time.day%4 == 0) getPlayer.time.month += 1;
 
   month = getPlayer.time.month%4;
-  if(getPlayer.time.month>4 ) getPlayer.age += 1;
+  if(getPlayer.time.month%4 == 0) getPlayer.age += 1;
 
   getPlayer.time.minute = minute;
   getPlayer.time.hour = hour;
   getPlayer.time.day = day;
   getPlayer.time.month = month;
-
   return getPlayer;
 }
 
 var goto = ( menu , destination ) => {
-  //menu.currentMenu.name = destination.name;
   allMenu.forEach((location)=>{
     if(location.name == destination.name){
       menu.currentMenu = location;
@@ -806,32 +821,40 @@ var goto = ( menu , destination ) => {
   return menu;
 }
 
-var workAs = ( player, job ) => {
-  player.money += player.jobs.filter((j) => {
+var workAs = ( menu, job ) => {
+  menu.buttonShow.player.jobs.forEach((j) => {
+    if( j.name == job.name )
     j.lv += 0.15;   // work as
-    return job.income * parseInt(j.lv);
+    menu.buttonShow.player.money += job.income * parseInt(j.lv);
   });
-  player.time.hour += job.base;
+  menu.buttonShow.player.time.hour += job.base;
 
-  player = setEnergy(player, -job.energy);  // - is negative
+  menu = setEnergy(menu, -job.energy);  // - is negative
 
-  player = validateTime( player );
-  return player;
+  menu.buttonShow.player = validateTime( menu.buttonShow.player );
+  return menu;
 }
 
-var setEnergy = (player, en) => {
-  if( player.energy + en < 35){
-    player.health += (player.energy - en);
+var setEnergy = (menu, en) => {
+  if( menu.buttonShow.player.energy + en < 35 && en < 0){
+    menu.buttonShow.player.health -= parseInt(-en);
   }
-  player.energy += en;
-  if( player.energy > 100 ) player.energy = 100;
-  return player;
+  menu.buttonShow.player.energy += en;
+  if( menu.buttonShow.player.energy > 100 ) menu.buttonShow.player.energy = 100;
+  if( menu.buttonShow.player.energy <= 0 ) {
+    allMenu.forEach((m) => {
+      if( menu.name == m.currentMenu.name ){
+        menu = m.go( menu );
+      }
+    });
+  }
+  return menu;
 }
 
 var sleep = ( player ) => {
   if( player.energy < 35 ){
     player.time.hour += 8;
-    player = setEnergy( player ,parseInt( (35 - player.energy) *  50/35 ) );
+    player = setEnergy( player , parseInt( (35 - player.energy) *  50/35 ) );
     player = validateTime( player );
     return player;
   }

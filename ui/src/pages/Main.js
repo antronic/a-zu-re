@@ -108,14 +108,12 @@ const MainPage = class MainPage extends Component {
     })
   }
 
-  componentWillMount() {
-    if (this.props.menu.buttonShow.player.health <= 0) {
-      this.props.setDie(true);  
-    }
-  }
-
   render() {
     const player = this.props.menu.buttonShow.player;
+
+    if (this.props.menu.buttonShow.player.health <= 0) {
+      this.props.setDie(true);
+    }
 
     return (
       <Page>
@@ -130,11 +128,11 @@ const MainPage = class MainPage extends Component {
                 break;
               }
               case 'action': {
-                newMenu.currentMenu.player = m.action(this.props.menu.buttonShow.player)
+                newMenu.currentMenu.player = m.action(this.props.menu)
                 break;
               }
             }
-            this.props.setMenu(Object.assign({}, newMenu))
+            this.props.setMenu(Object.assign({}, newMenu));
           } }))}/>
         <div className="title">
           <div style={{
