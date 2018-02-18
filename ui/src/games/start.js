@@ -1,16 +1,16 @@
 var player = {
-  name: "test",
-  age: 40,
-  money: 2340,
+  name: "",
+  age: 12,
+  money: 33220,
   sex: "male", // male female
   time: {
-    hour: 3,
-    minute: 0,
+    hour: 6,
+    minute: 2,
     day: 0,
     month: 0
   }, // 00 -> 60*24 = 1440
-  health: 0,  // 0 -> 100
-  energy: 0,  // 0 -> 100
+  health: 10,  // 0 -> 100
+  energy: 40,  // 0 -> 100
   jobs: [], // { lv, jobName, income }
   assets: [{
     name: "House",
@@ -22,11 +22,11 @@ var player = {
 // Default Game
 var menu = {
   currentMenu : "House",
-  buttonShow : [
+  buttonShow : {
     "go": [],
     "action": [],
     "player" : {}
-  ]
+  }
 };
 
 module.exports = {

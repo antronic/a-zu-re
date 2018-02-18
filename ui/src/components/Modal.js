@@ -35,9 +35,9 @@ function listButtons(buttons) {
   ))
 }
 
-const Modal = ({ buttons, title }) => {
-  return (
-    <Background>
+const Modal = ({ active, buttons, onDismiss, title }) => {
+  return (active) ? (
+    <Background onClick={onDismiss}>
       <div style={{
         marginTop: '1em',
         background: '#f2f2f2',
@@ -48,13 +48,19 @@ const Modal = ({ buttons, title }) => {
       }}>
         <h2 style={{ marginBottom: '15px', textAlign: 'center', color: '#525252' }}>{ title }</h2>
 
-        { listButtons(buttons) }
+        <div style={{
+          height: '80%',
+          overflow: 'scroll',
+        }}>
+          { listButtons(buttons) }
+        </div>
       </div>
     </Background>
-  );
+  ): (<div></div>);
 }
 
 Modal.defaultProps = {
+  active: false,
   title: 'Modal Title',
   buttons: [
     {

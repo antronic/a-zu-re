@@ -4,12 +4,12 @@ import {hydrate, injectGlobal} from 'emotion';
 import styled from 'react-emotion';
 import { connect } from 'react-redux';
 
-import { player } from './games/start';
-import games from './games/mainGame';
+import { player, menu } from './games/start';
+import { allMenu } from './games/mainGame';
 
 import Main from './pages/Main';
 
-import { setPlayer } from './ducky/app'
+import { setPlayer, setMenu } from './ducky/app'
 
 const Background = styled.div`
   background-color: #f00;
@@ -46,7 +46,7 @@ const StatusBar = styled.div`
   justify-content: space-between;
 `;
 
-const Phone = ({ children, setPlayer }) => (
+const Phone = ({ children, setPlayer, setMenu }) => (
   <Frame>
     <Display>
       <StatusBar>
@@ -83,7 +83,12 @@ class App extends Component {
         box-sizing: border-box;
       }
     `
-    this.props.setPlayer(player)
+    const newMenu = menu;
+    newMenu.currentMenu = allMenu[0];
+
+    Object.assign(newMenu.buttonShow.player, {}, player)
+
+    this.props.setMenu(Object.assign({}, newMenu));
   }
 
   render() {
@@ -105,4 +110,9 @@ class App extends Component {
   }
 }
 
-export default connect(null, { setPlayer })(App);
+
+const mapStateToProps = state => ({
+  player: state.app.player,
+})
+
+export default connect(mapStateToProps, { setPlayer, setMenu })(App);
