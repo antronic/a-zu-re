@@ -83,12 +83,19 @@ class App extends Component {
         box-sizing: border-box;
       }
     `
-    const newMenu = menu;
-    newMenu.currentMenu = allMenu[0];
+    if (!localStorage.getItem('a-zu-re-save') === false) {
+      const save = localStorage.getItem('a-zu-re-save');
+      const data = JSON.stringify(this.props.menu);
 
-    Object.assign(newMenu.buttonShow.player, {}, player)
+      localStorage.setItem('a-zu-re-save', data);
+    } else {
+      const newMenu = menu;
+      newMenu.currentMenu = allMenu[0];
 
-    this.props.setMenu(Object.assign({}, newMenu));
+      Object.assign(newMenu.buttonShow.player, {}, player)
+
+      this.props.setMenu(Object.assign({}, newMenu));
+    }
   }
 
   render() {
@@ -135,6 +142,8 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   player: state.app.player,
+  menu: state.app.menu,
+
   isDead: state.app.isDead,
 })
 
