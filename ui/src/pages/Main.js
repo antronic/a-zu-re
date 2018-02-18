@@ -6,7 +6,7 @@ import { withRouter } from 'react-router-dom';
 import Page from '../components/Page';
 import Modal from '../components/Modal';
 
-import { setMenu } from '../ducky/app';
+import { setMenu, setDie } from '../ducky/app';
 
 let Stage = ({ children, className }) => (
   <div className={className}>
@@ -106,6 +106,12 @@ const MainPage = class MainPage extends Component {
 
       menuActive: false,
     })
+  }
+
+  componentWillMount() {
+    if (this.props.menu.buttonShow.player.health <= 0) {
+      this.props.setDie(true);  
+    }
   }
 
   render() {
@@ -254,4 +260,4 @@ const mapStateToProps = state => ({
   menu: state.app.menu,
 })
 
-export default withRouter(connect(mapStateToProps, { setMenu })(MainPage));
+export default withRouter(connect(mapStateToProps, { setMenu, setDie })(MainPage));

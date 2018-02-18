@@ -101,6 +101,28 @@ class App extends Component {
           alignItems: 'center',
           justifyContent: 'center',
         }}>
+          <div style={{
+            width: '100%',
+            height: '100%',
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            zIndex: 1230,
+            textAlign: 'right',
+            display: this.props.isDead ? 'flex' : 'none',
+          }}>
+            <img height="100%" width="100%" src="/img/blood.png" style={{
+            }} alt=""/>
+            <h1 style={{
+              position: 'absolute',
+              top: '20%',
+              left: '33%',
+              fontSize: '128pt',
+              transform: 'rotate(-45deg)',
+              color: '#fff',
+              textShadow: '0px 0px 4px #000',
+            }}>ตายจ้า!</h1>
+          </div>
           <Phone>
             <Route exact path="/" component={Main}/>
           </Phone>
@@ -113,6 +135,7 @@ class App extends Component {
 
 const mapStateToProps = state => ({
   player: state.app.player,
+  isDead: state.app.isDead,
 })
 
 export default connect(mapStateToProps, { setPlayer, setMenu })(App);
