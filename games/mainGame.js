@@ -57,7 +57,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Taxi"] )
+          menu.buttonShow.player = workAs( menu, allJob["Taxi"] )
           return menu;
         }
       },
@@ -159,7 +159,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Doctor"] )
+          menu.buttonShow.player = workAs( menu, allJob["Doctor"] )
           return menu;
         }
       },
@@ -176,7 +176,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Nurse"] )
+          menu.buttonShow.player = workAs( menu, allJob["Nurse"] )
           return menu;
         }
       },
@@ -184,8 +184,8 @@ var allMenu = [
         name: "Go to see doctor",
         showed: (player) => {return true},
         action: (menu) => {
-          player = heal( player, allJob["Nurse"] )
-          return player;
+          menu.buttonShow.player = heal( menu.buttonShow.player, allJob["Nurse"] )
+          return menu;
         }
       },
       {
@@ -281,7 +281,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Teacher"] )
+          menu.buttonShow.player = workAs( menu, allJob["Teacher"] )
           return menu;
         }
       }
@@ -345,7 +345,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Police"] )
+          menu.buttonShow.player = workAs( menu, allJob["Police"] )
           return menu;
         }
       },
@@ -425,7 +425,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Accountant"] )
+          menu.buttonShow.player = workAs( menu, allJob["Accountant"] )
           return menu;
         }
       },
@@ -442,7 +442,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Programmer"] )
+          menu.buttonShow.player = workAs( menu, allJob["Programmer"] )
           return menu;
         }
       }
@@ -505,7 +505,7 @@ var allMenu = [
           return hasLicense;
         },
         action: (menu) => {
-          menu.buttonShow.player = workAs( menu.buttonShow.player, allJob["Cashier"] )
+          menu.buttonShow.player = workAs( menu, allJob["Cashier"] )
           return menu;
         }
       },
