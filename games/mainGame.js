@@ -200,6 +200,18 @@ var allMenu = [
         }
       },
       {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          return menu;
+        }
+      },
+      {
         name: "Study to be Doctor",
         showed: (player) => {
           let hasLicense = false;
@@ -295,7 +307,19 @@ var allMenu = [
           menu = workAs( menu, allJob["Teacher"] )
           return menu;
         }
-      }
+      },
+      {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          return menu;
+        }
+      },
     ]
 
   },
@@ -357,6 +381,18 @@ var allMenu = [
         },
         action: (menu) => {
           menu = workAs( menu, allJob["Police"] )
+          return menu;
+        }
+      },
+      {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
           return menu;
         }
       },
@@ -441,6 +477,18 @@ var allMenu = [
         }
       },
       {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          return menu;
+        }
+      },
+      {
         name: "Work as Programmer",
         showed: (player) => {
           let hasLicense = false;
@@ -521,6 +569,18 @@ var allMenu = [
         }
       },
       {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          return menu;
+        }
+      },
+      {
         name: "Study to be Cashier",
         showed: (player) => {
           let hasLicense = false;
@@ -597,6 +657,18 @@ var allMenu = [
         },
         action: ( menu ) => {
           menu.buttonShow.player = study(menu.buttonShow.player, allJob["Accountant"])
+          return menu;
+        }
+      },
+      {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
           return menu;
         }
       },
