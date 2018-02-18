@@ -51,8 +51,8 @@ var allMenu = [
           player.jobs.forEach( (job) => {
             if( job.name == "Taxi" ){
               hasLicense = true;
+              console.log("Already has license");
             }
-
           });
           return hasLicense;
         },
@@ -91,7 +91,6 @@ var allMenu = [
             if( job.name == "Taxi" ){
               hasLicense = true;
             }
-
           });
           return !hasLicense;
         },
