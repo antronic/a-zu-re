@@ -818,7 +818,7 @@ var workAs = ( player, job ) => {
 
 var setEnergy = (player, en) => {
   if( player.energy + en < 35){
-    player.health += (player.energy - en);
+    player.health -= (player.energy + en);
   }
   player.energy += en;
   if( player.energy > 100 ) player.energy = 100;
@@ -828,7 +828,7 @@ var setEnergy = (player, en) => {
 var sleep = ( player ) => {
   if( player.energy < 35 ){
     player.time.hour += 8;
-    player = setEnergy( player ,parseInt( (35 - player.energy) *  50/35 ) );
+    player = setEnergy( player , parseInt( (35 - player.energy) *  50/35 ) );
     player = validateTime( player );
     return player;
   }
