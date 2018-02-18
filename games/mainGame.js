@@ -84,6 +84,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -208,6 +210,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -317,6 +321,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -393,6 +399,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -485,6 +493,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -577,6 +587,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
@@ -669,6 +681,8 @@ var allMenu = [
           menu = setEnergy(menu, -25);  // - is negative
           menu.buttonShow.player.health += 10;
           if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          menu.buttonShow.player.time.minute += 30;
+          menu.buttonShow.player = validateTime( menu.buttonShow.player );
           return menu;
         }
       },
