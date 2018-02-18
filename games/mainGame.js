@@ -76,6 +76,18 @@ var allMenu = [
         }
       },
       {
+        name: "Play a Kite",
+        showed: (player) => {
+          return true;
+        },
+        action: (menu) => {
+          menu = setEnergy(menu, -25);  // - is negative
+          menu.buttonShow.player.health += 10;
+          if( menu.buttonShow.player.health > 100 ) menu.buttonShow.player.health = 100;
+          return menu;
+        }
+      },
+      {
         name: "Sleep",
         showed: (player) => {return true},
         action: (menu) => {
@@ -861,7 +873,7 @@ var sleep = ( player ) => {
     player = validateTime( player );
     return player;
   }
-  player.time.hour += parseInt((100 - player.energy)*8/65);
+  player.time.hour += parseInt((100 - player.energy)*24/65);
   player.energy = 100;
   player = validateTime( player );
   return player;
