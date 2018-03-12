@@ -1,9 +1,8 @@
 language: node_js
 node_js:
   - "iojs"
-before_script:
-  - cd ui && yarn install
 script:
+  - cd ui && yarn install
   - yarn build
 deploy:
   provider: pages
