@@ -1,0 +1,15 @@
+language: node_js
+node_js:
+  - "iojs"
+before_script:
+  - cd ui && yarn install
+script:
+  - yarn build
+deploy:
+  provider: pages
+  skip-cleanup: true
+  github-token: $GITHUB_TOKEN  # Set in travis-ci.org dashboard, marked secure
+  local-dir: ui/build
+  keep-history: true
+  on:
+    branch: gh-pages
